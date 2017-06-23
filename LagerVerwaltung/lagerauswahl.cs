@@ -30,11 +30,9 @@ namespace LagerVerwaltung
         }
         private void karteanzeigen()
         {
-            string ort = comboBox1.SelectedItem.ToString();
-
             try
             {
-
+                string ort = comboBox1.SelectedItem.ToString();
                 StringBuilder queryaddress = new StringBuilder();
                 queryaddress.Append("https://maps.google.com/maps?q=");
 

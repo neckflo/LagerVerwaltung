@@ -34,11 +34,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox_nummer = new System.Windows.Forms.TextBox();
+            this.textBox_name = new System.Windows.Forms.TextBox();
+            this.textBox_bezeichnung = new System.Windows.Forms.TextBox();
+            this.textBox_bestand = new System.Windows.Forms.TextBox();
+            this.textBox_lagerort = new System.Windows.Forms.TextBox();
+            this.button_hinzufuegenartikel = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 292);
+            this.button1.Location = new System.Drawing.Point(13, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -49,61 +58,134 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 60);
+            this.label1.Location = new System.Drawing.Point(50, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(76, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Text = "Artikelnummer:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 88);
+            this.label2.Location = new System.Drawing.Point(50, 126);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(69, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Text = "Bezeichnung";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 124);
+            this.label3.Location = new System.Drawing.Point(50, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "label3";
+            this.label3.Text = "Bestand";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 156);
+            this.label4.Location = new System.Drawing.Point(50, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 4;
-            this.label4.Text = "label4";
+            this.label4.Text = "Lagerort";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 193);
+            this.label5.Location = new System.Drawing.Point(50, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(38, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = "label5";
+            this.label5.Text = "Name:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(-3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Datensatz hinzufügen";
+            // 
+            // textBox_nummer
+            // 
+            this.textBox_nummer.Location = new System.Drawing.Point(158, 65);
+            this.textBox_nummer.Name = "textBox_nummer";
+            this.textBox_nummer.Size = new System.Drawing.Size(100, 20);
+            this.textBox_nummer.TabIndex = 7;
+            // 
+            // textBox_name
+            // 
+            this.textBox_name.Location = new System.Drawing.Point(158, 94);
+            this.textBox_name.Name = "textBox_name";
+            this.textBox_name.Size = new System.Drawing.Size(100, 20);
+            this.textBox_name.TabIndex = 8;
+            // 
+            // textBox_bezeichnung
+            // 
+            this.textBox_bezeichnung.Location = new System.Drawing.Point(158, 123);
+            this.textBox_bezeichnung.Name = "textBox_bezeichnung";
+            this.textBox_bezeichnung.Size = new System.Drawing.Size(100, 20);
+            this.textBox_bezeichnung.TabIndex = 9;
+            // 
+            // textBox_bestand
+            // 
+            this.textBox_bestand.Location = new System.Drawing.Point(158, 151);
+            this.textBox_bestand.Name = "textBox_bestand";
+            this.textBox_bestand.Size = new System.Drawing.Size(100, 20);
+            this.textBox_bestand.TabIndex = 10;
+            // 
+            // textBox_lagerort
+            // 
+            this.textBox_lagerort.Location = new System.Drawing.Point(158, 180);
+            this.textBox_lagerort.Name = "textBox_lagerort";
+            this.textBox_lagerort.Size = new System.Drawing.Size(100, 20);
+            this.textBox_lagerort.TabIndex = 11;
+            // 
+            // button_hinzufuegenartikel
+            // 
+            this.button_hinzufuegenartikel.Location = new System.Drawing.Point(37, 227);
+            this.button_hinzufuegenartikel.Name = "button_hinzufuegenartikel";
+            this.button_hinzufuegenartikel.Size = new System.Drawing.Size(245, 23);
+            this.button_hinzufuegenartikel.TabIndex = 12;
+            this.button_hinzufuegenartikel.Text = "Artikel hinzufügen";
+            this.button_hinzufuegenartikel.UseVisualStyleBackColor = true;
+            this.button_hinzufuegenartikel.Click += new System.EventHandler(this.button_hinzufuegenartikel_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(37, 33);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(245, 188);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "-------";
             // 
             // hinzufuegen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 336);
+            this.ClientSize = new System.Drawing.Size(598, 336);
+            this.Controls.Add(this.button_hinzufuegenartikel);
+            this.Controls.Add(this.textBox_lagerort);
+            this.Controls.Add(this.textBox_bestand);
+            this.Controls.Add(this.textBox_bezeichnung);
+            this.Controls.Add(this.textBox_name);
+            this.Controls.Add(this.textBox_nummer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
             this.Name = "hinzufuegen";
             this.Text = "hinzufuegen";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,5 +199,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox_nummer;
+        private System.Windows.Forms.TextBox textBox_name;
+        private System.Windows.Forms.TextBox textBox_bezeichnung;
+        private System.Windows.Forms.TextBox textBox_bestand;
+        private System.Windows.Forms.TextBox textBox_lagerort;
+        private System.Windows.Forms.Button button_hinzufuegenartikel;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
