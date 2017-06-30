@@ -74,7 +74,10 @@ namespace LagerVerwaltung
 
         private void button_anzeigen_lagerverwaltung_Click(object sender, EventArgs e)
         {
-           
+            string auswahl = comboBox1.SelectedItem.ToString();
+
+            adpLager = new OleDbDataAdapter("select * from lager where lagerort = "+auswahl+" ", con);
+            datenAnzeigen();
 
         }
 

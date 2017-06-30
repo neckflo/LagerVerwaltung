@@ -53,7 +53,7 @@ namespace LagerVerwaltung
         private void button_hinzufuegenartikel_Click(object sender, EventArgs e)
         {
             Produkt aProdukt = new Produkt();
-        //    aProdukt.Nummer = Convert.ToInt32(textBox_nummer.Text);
+            //aProdukt.Nummer = Convert.ToInt32(textBox_nummer.Text);
         
             aProdukt.Name = textBox_name.Text;
             aProdukt.Bezeichnung = textBox_bezeichnung.Text;
@@ -68,9 +68,21 @@ namespace LagerVerwaltung
             OleDbCommand cmd = con.CreateCommand();
             //Autowert
             cmd.CommandText = "SELECT @@identity From lager";
-            Int32 auto = (Int32)cmd.ExecuteScalar();
-            aProdukt.Nummer = auto;
-            textBox_nummer.Text = auto.ToString();
+            try
+            {
+
+                Int32 auto = (Int32)cmd.ExecuteScalar();
+                auto++;
+                aProdukt.Nummer = auto;
+                textBox_nummer.Text = auto.ToString();
+
+            }
+            catch (Exception)
+            {
+
+  
+            }
+
 
            
             //cmd.CommandText = "Insert into lager (Nummer,Name,Bezeichnung,Bestand,Lagerort) Values ("+aProdukt.Nummer+","+aProdukt.Name","+aProdukt.Bezeichnung+","+aProdukt.Bestand+","+aProdukt.Lagerort+")";
@@ -91,9 +103,15 @@ namespace LagerVerwaltung
             cmd.Parameters["PR"].Value = aProdukt.Preis;
             //Ausführen
             try
-            {                   // ASDFKLAJSDLKFJIAEFJOIAFJDKLFJASDIOFJOAESJFAKDSFLEJISOII
+            {                 
                 int anzahl = cmd.ExecuteNonQuery();
-                MessageBox.Show(anzahl.ToString() + " Sätze eingefügt.");
+                MessageBox.Show(anzahl.ToString() + " Produkt eingefügt.");
+                textBox_name.Clear();
+                textBox_nummer.Clear();
+                textBox_bezeichnung.Clear();
+                textBox_bestand.Clear();
+                textBox_lagerort.Clear();
+                textBox_preis.Clear();
             }
             catch (Exception)
             {
