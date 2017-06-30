@@ -42,6 +42,8 @@
             this.textBox_lagerort = new System.Windows.Forms.TextBox();
             this.button_hinzufuegenartikel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label_preis = new System.Windows.Forms.Label();
+            this.textBox_preis = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,6 +117,7 @@
             this.textBox_nummer.Name = "textBox_nummer";
             this.textBox_nummer.Size = new System.Drawing.Size(100, 20);
             this.textBox_nummer.TabIndex = 7;
+            this.textBox_nummer.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_nummer_Validating);
             // 
             // textBox_name
             // 
@@ -122,6 +125,7 @@
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(100, 20);
             this.textBox_name.TabIndex = 8;
+            this.textBox_name.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_name_Validating);
             // 
             // textBox_bezeichnung
             // 
@@ -129,6 +133,7 @@
             this.textBox_bezeichnung.Name = "textBox_bezeichnung";
             this.textBox_bezeichnung.Size = new System.Drawing.Size(100, 20);
             this.textBox_bezeichnung.TabIndex = 9;
+            this.textBox_bezeichnung.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_bezeichnung_Validating);
             // 
             // textBox_bestand
             // 
@@ -136,6 +141,7 @@
             this.textBox_bestand.Name = "textBox_bestand";
             this.textBox_bestand.Size = new System.Drawing.Size(100, 20);
             this.textBox_bestand.TabIndex = 10;
+            this.textBox_bestand.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_bestand_Validating);
             // 
             // textBox_lagerort
             // 
@@ -143,10 +149,11 @@
             this.textBox_lagerort.Name = "textBox_lagerort";
             this.textBox_lagerort.Size = new System.Drawing.Size(100, 20);
             this.textBox_lagerort.TabIndex = 11;
+            this.textBox_lagerort.Validating += new System.ComponentModel.CancelEventHandler(this.textBox_lagerort_Validating);
             // 
             // button_hinzufuegenartikel
             // 
-            this.button_hinzufuegenartikel.Location = new System.Drawing.Point(37, 227);
+            this.button_hinzufuegenartikel.Location = new System.Drawing.Point(37, 241);
             this.button_hinzufuegenartikel.Name = "button_hinzufuegenartikel";
             this.button_hinzufuegenartikel.Size = new System.Drawing.Size(245, 23);
             this.button_hinzufuegenartikel.TabIndex = 12;
@@ -156,13 +163,31 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox_preis);
+            this.groupBox1.Controls.Add(this.label_preis);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Location = new System.Drawing.Point(37, 33);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(245, 188);
+            this.groupBox1.Size = new System.Drawing.Size(245, 202);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "-------";
+            // 
+            // label_preis
+            // 
+            this.label_preis.AutoSize = true;
+            this.label_preis.Location = new System.Drawing.Point(13, 177);
+            this.label_preis.Name = "label_preis";
+            this.label_preis.Size = new System.Drawing.Size(30, 13);
+            this.label_preis.TabIndex = 7;
+            this.label_preis.Text = "Preis";
+            // 
+            // textBox_preis
+            // 
+            this.textBox_preis.Location = new System.Drawing.Point(121, 177);
+            this.textBox_preis.Name = "textBox_preis";
+            this.textBox_preis.Size = new System.Drawing.Size(100, 20);
+            this.textBox_preis.TabIndex = 8;
             // 
             // hinzufuegen
             // 
@@ -207,5 +232,7 @@
         private System.Windows.Forms.TextBox textBox_lagerort;
         private System.Windows.Forms.Button button_hinzufuegenartikel;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox textBox_preis;
+        private System.Windows.Forms.Label label_preis;
     }
 }

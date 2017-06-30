@@ -32,6 +32,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button_hinzufugen = new System.Windows.Forms.Button();
             this.label_meldung = new System.Windows.Forms.Label();
+            this.button_trennen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_verbinden
@@ -46,6 +47,7 @@
             // 
             // button4
             // 
+            this.button4.Enabled = false;
             this.button4.Location = new System.Drawing.Point(303, 37);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
@@ -56,6 +58,7 @@
             // 
             // button_hinzufugen
             // 
+            this.button_hinzufugen.Enabled = false;
             this.button_hinzufugen.Location = new System.Drawing.Point(303, 76);
             this.button_hinzufugen.Name = "button_hinzufugen";
             this.button_hinzufugen.Size = new System.Drawing.Size(75, 23);
@@ -72,17 +75,30 @@
             this.label_meldung.Size = new System.Drawing.Size(0, 13);
             this.label_meldung.TabIndex = 8;
             // 
+            // button_trennen
+            // 
+            this.button_trennen.Enabled = false;
+            this.button_trennen.Location = new System.Drawing.Point(39, 76);
+            this.button_trennen.Name = "button_trennen";
+            this.button_trennen.Size = new System.Drawing.Size(75, 23);
+            this.button_trennen.TabIndex = 9;
+            this.button_trennen.Text = "Trennen";
+            this.button_trennen.UseVisualStyleBackColor = true;
+            this.button_trennen.Click += new System.EventHandler(this.button_trennen_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 375);
+            this.Controls.Add(this.button_trennen);
             this.Controls.Add(this.label_meldung);
             this.Controls.Add(this.button_hinzufugen);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button_verbinden);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -94,6 +110,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button_hinzufugen;
         private System.Windows.Forms.Label label_meldung;
+        private System.Windows.Forms.Button button_trennen;
     }
 }
 

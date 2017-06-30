@@ -87,6 +87,7 @@
     <Compile Include="lagerauswahl.Designer.cs">
       <DependentUpon>lagerauswahl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Produkt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="anzeigen.resx">

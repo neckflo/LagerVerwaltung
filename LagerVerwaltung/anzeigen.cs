@@ -32,6 +32,7 @@ namespace LagerVerwaltung
             comboBox1.Items.Add("Stuttgart");
             comboBox1.Items.Add("München");
             comboBox1.Items.Add("Berlin");
+            comboBox1.Items.Add("gesamt");
 
 
 
@@ -76,7 +77,6 @@ namespace LagerVerwaltung
             //dataGridViewLager.DataSource = dsLager;
             //dataGridViewLager.DataMember = "Lager";
 
-
             //con = new OleDbConnection(Properties.Settings.Default.DBCon);
             //adpLager = new OleDbDataAdapter("select * from lager where lagerort = 1", con);
             //dsLager = new DataSet();
@@ -89,7 +89,7 @@ namespace LagerVerwaltung
             this.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) //Daten Sichern
         {
             OleDbCommandBuilder b = new OleDbCommandBuilder(adpLager);
             adpLager.UpdateCommand = b.GetUpdateCommand();
@@ -142,6 +142,12 @@ namespace LagerVerwaltung
                 adpLager = new OleDbDataAdapter("select * from lager where lagerort = 5", con);
                 datenAnzeigen();
             }
+            if (lager == 5)
+            {
+                adpLager = new OleDbDataAdapter("select * from lager", con);
+                datenAnzeigen();
+            }
+
 
 
 
