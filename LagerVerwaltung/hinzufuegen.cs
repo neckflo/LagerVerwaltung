@@ -54,6 +54,7 @@ namespace LagerVerwaltung
         {
             Produkt aProdukt = new Produkt();
         //    aProdukt.Nummer = Convert.ToInt32(textBox_nummer.Text);
+        
             aProdukt.Name = textBox_name.Text;
             aProdukt.Bezeichnung = textBox_bezeichnung.Text;
             aProdukt.Bestand = Convert.ToInt32(textBox_bestand.Text);
@@ -64,13 +65,14 @@ namespace LagerVerwaltung
         }
         private void insertDB(Produkt aProdukt)
         {
-            //OleDbCommand cmd = con.CreateCommand();
-            
-            //cmd.CommandText = "Insert Into lager values ";
-            //cmd.CommandType = CommandType.Text;
-            //MessageBox.Show("Daten erfolgreich hinzugefügt!");
-
             OleDbCommand cmd = con.CreateCommand();
+            //Autowert
+            cmd.CommandText = "SELECT @@identity From lager";
+            Int32 auto = (Int32)cmd.ExecuteScalar();
+            aProdukt.Nummer = auto;
+            textBox_nummer.Text = auto.ToString();
+
+           
             //cmd.CommandText = "Insert into lager (Nummer,Name,Bezeichnung,Bestand,Lagerort) Values ("+aProdukt.Nummer+","+aProdukt.Name","+aProdukt.Bezeichnung+","+aProdukt.Bestand+","+aProdukt.Lagerort+")";
             cmd.Parameters.Add("NR", OleDbType.Integer);
             cmd.Parameters.Add("NAM", OleDbType.WChar);
@@ -78,7 +80,7 @@ namespace LagerVerwaltung
             cmd.Parameters.Add("BES", OleDbType.Integer);
             cmd.Parameters.Add("LO", OleDbType.Integer);
             cmd.Parameters.Add("PR", OleDbType.Integer);
-            cmd.CommandText = "Insert into lager (artikelname,beschreibung,bestand,lagerort,preis) Values (NAM,BEZ,BES,LO,PR)";
+            cmd.CommandText = "Insert into lager (artikelnummer,artikelname,beschreibung,bestand,lagerort,preis) Values (NR,NAM,BEZ,BES,LO,PR)";
 
             //Values
             cmd.Parameters["NR"].Value = aProdukt.Nummer;
@@ -98,14 +100,7 @@ namespace LagerVerwaltung
 
                 MessageBox.Show("Einfügen nicht erfolgreich");
             }
-
-            //Autowert
-            cmd.CommandText = "SELECT @@identity From lager";
-            Int32 auto = (Int32)cmd.ExecuteScalar();
-            aProdukt.Nummer = auto;
-            textBox_nummer.Text = auto.ToString();
-
-
+                    
         }
 
         private void textBox_nummer_Validating(object sender, CancelEventArgs e)

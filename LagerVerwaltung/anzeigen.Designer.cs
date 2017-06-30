@@ -35,6 +35,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button_anzeigen_lagerverwaltung = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button_serialisieren = new System.Windows.Forms.Button();
+            this.button_deserialisieren = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLager)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,9 +62,9 @@
             // 
             this.button2.Location = new System.Drawing.Point(12, 365);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 23);
+            this.button2.Size = new System.Drawing.Size(154, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Daten Sichern";
+            this.button2.Text = "Daten in Datenbank Sichern";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -105,11 +107,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button_serialisieren
+            // 
+            this.button_serialisieren.Location = new System.Drawing.Point(228, 365);
+            this.button_serialisieren.Name = "button_serialisieren";
+            this.button_serialisieren.Size = new System.Drawing.Size(137, 23);
+            this.button_serialisieren.TabIndex = 7;
+            this.button_serialisieren.Text = "Serialisieren";
+            this.button_serialisieren.UseVisualStyleBackColor = true;
+            this.button_serialisieren.Click += new System.EventHandler(this.button_serialisieren_Click);
+            // 
+            // button_deserialisieren
+            // 
+            this.button_deserialisieren.Location = new System.Drawing.Point(371, 365);
+            this.button_deserialisieren.Name = "button_deserialisieren";
+            this.button_deserialisieren.Size = new System.Drawing.Size(107, 23);
+            this.button_deserialisieren.TabIndex = 8;
+            this.button_deserialisieren.Text = "Deserialisieren";
+            this.button_deserialisieren.UseVisualStyleBackColor = true;
+            this.button_deserialisieren.Click += new System.EventHandler(this.button_deserialisieren_Click);
+            // 
             // anzeigen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 400);
+            this.Controls.Add(this.button_deserialisieren);
+            this.Controls.Add(this.button_serialisieren);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_anzeigen_lagerverwaltung);
             this.Controls.Add(this.comboBox1);
@@ -134,5 +158,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button button_anzeigen_lagerverwaltung;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_serialisieren;
+        private System.Windows.Forms.Button button_deserialisieren;
     }
 }

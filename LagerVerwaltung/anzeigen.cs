@@ -27,12 +27,12 @@ namespace LagerVerwaltung
             adpLager = new OleDbDataAdapter("select * from lager", con);
             dsLager = new DataSet();
             datenAnzeigen();
-            comboBox1.Items.Add("Würzburg");
-            comboBox1.Items.Add("Hamburg");
-            comboBox1.Items.Add("Stuttgart");
-            comboBox1.Items.Add("München");
-            comboBox1.Items.Add("Berlin");
-            comboBox1.Items.Add("gesamt");
+            comboBox1.Items.Add("1. Würzburg");
+            comboBox1.Items.Add("2. Hamburg");
+            comboBox1.Items.Add("3. Stuttgart");
+            comboBox1.Items.Add("4. München");
+            comboBox1.Items.Add("5. Berlin");
+            comboBox1.Items.Add("Gesamt");
 
 
 
@@ -74,13 +74,7 @@ namespace LagerVerwaltung
 
         private void button_anzeigen_lagerverwaltung_Click(object sender, EventArgs e)
         {
-            //dataGridViewLager.DataSource = dsLager;
-            //dataGridViewLager.DataMember = "Lager";
-
-            //con = new OleDbConnection(Properties.Settings.Default.DBCon);
-            //adpLager = new OleDbDataAdapter("select * from lager where lagerort = 1", con);
-            //dsLager = new DataSet();
-            //datenAnzeigen();
+           
 
         }
 
@@ -99,6 +93,8 @@ namespace LagerVerwaltung
             adpLager.DeleteCommand = b.GetDeleteCommand();
 
             adpLager.Update(dsLager, "Lager");
+
+            MessageBox.Show("Die Daten wurden erfolgreich in die Datenbank geschrieben");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -148,10 +144,29 @@ namespace LagerVerwaltung
                 datenAnzeigen();
             }
 
+            
+        }
+        //Serialisieren
+        private void button_serialisieren_Click(object sender, EventArgs e)
+        {
+            dsLager.WriteXmlSchema("produktliste.xsd");
+            dsLager.WriteXml("produktliste.xml", XmlWriteMode.DiffGram);
+            MessageBox.Show("Die Daten wurden erfolgreich Serialisiert");
+        }
+        //Deserialisieren
+        private void button_deserialisieren_Click(object sender, EventArgs e)
+        {
 
-
-
-
+            dataGridViewLager.DataSource = null;
+            dataGridViewLager.Rows.Clear();
+            dataGridViewLager.Columns.Clear();
+                     
+            dsLager = new DataSet();
+            dsLager.ReadXmlSchema("produktliste.xsd");
+            dsLager.ReadXml("produktliste.xml", XmlReadMode.DiffGram);
+            dataGridViewLager.DataSource = dsLager;
+            dataGridViewLager.DataMember = "Lager";
+            MessageBox.Show("Die Daten wurden erfolgreich Deserialisiert");
         }
     }
 }
